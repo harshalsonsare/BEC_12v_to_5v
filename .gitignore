@@ -1,0 +1,25 @@
+# KiCad project & temporary files
+*-backups/
+.mcp-backups/
+.history/
+_autosave-*
+*.bak
+*.kicad_pcb-bak
+*.kicad_sch-bak
+*.kicad_prl
+fp-info-cache
+*.lck
+~*.lck
+*.tmp
+
+# OS & Editor artifacts
+.DS_Store
+Thumbs.db
+*.swp
+*~
+
+# Python cache
+__pycache__/
+*.py[cod]
+*$py.class
+test_*.rpt
