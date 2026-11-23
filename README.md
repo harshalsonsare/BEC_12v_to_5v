@@ -4,6 +4,29 @@ A complete, production-verified hardware repository featuring a high-efficiency 
 
 ---
 
+## 3D Hardware & PCB Showcase
+
+<p align="center">
+  <img src="docs/images/pcb_3d_isometric.png" alt="12V to 5V 3A BEC 3D Isometric View" width="850">
+</p>
+
+<p align="center">
+  <img src="docs/images/pcb_top.png" alt="Top Layer PCB Layout" width="410">&nbsp;
+  <img src="docs/images/pcb_bottom.png" alt="Bottom Layer PCB Layout" width="410">
+</p>
+<p align="center">
+  <em>Figure 1: 3D Raytraced Model (Top) | Top Layer High-Current Routing & SilkS (Left) | Bottom Layer Shielded FB Trace & Solid GND (Right)</em>
+</p>
+
+<p align="center">
+  <img src="docs/images/schematic.png" alt="12V to 5V Buck Converter Schematic" width="850">
+</p>
+<p align="center">
+  <em>Figure 2: Verified Schematic (TI TPS54302, Protection Diode, Passives & Connectors)</em>
+</p>
+
+---
+
 ## 1. Project Overview & Specifications
 
 ### 12V-to-5V 3A Battery Eliminator Circuit (BEC)
@@ -24,7 +47,7 @@ Designed for robotics, UAV/FPV drones, RC models, and embedded computing (e.g. p
 | **UVLO Protection** | Precision divider: $R_3 = 511\text{ k}\Omega$, $R_4 = 105\text{ k}\Omega$ | Starts at ~6.9 V, stops at ~5.7 V; protects EN pin (7 V abs max) |
 | **Input Connector ($J_1$)** | **AMASS XT30PW-M** (Horizontal / Right-Angle PCB) | High-reliability DC connector rated up to 30 A |
 | **Output Connector ($J_2$)** | **3-Pin 2.54 mm Vertical Pin Header** | Standard RC servo pinout (Pin 1: NC/Signal, Pin 2: +5V, Pin 3: GND) |
-| **PCB Dimensions** | **25.0 mm × 18.0 mm** | Ultra-compact form factor |
+| **PCB Dimensions** | **25.0 mm × 18.0 mm** | Centered on standard A4 sheet ($X = 148.5\text{ mm}, Y = 105.0\text{ mm}$) |
 | **Layer Stackup** | **2-Layer FR-4**, 1.6 mm thickness, 1 oz Cu | Dual solid ground planes with thermal stitching array |
 | **Design Status** | **100% Routed & Verified** | **0 DRC violations, 0 unconnected items, 0 ERC errors** |
 
@@ -38,6 +61,11 @@ KiCad/
 │   └── rules/
 │       └── kicad-pcb.md           # Persistent agent engineering rules (always_on)
 ├── docs/
+│   ├── images/                    # Visual renderings & documentation figures
+│   │   ├── pcb_3d_isometric.png   # 3D raytraced PCB model
+│   │   ├── pcb_top.png            # Top layer routing & silkscreen
+│   │   ├── pcb_bottom.png         # Bottom layer shielded FB & ground plane
+│   │   └── schematic.png          # Capture schematic overview
 │   └── lessons-learned.md         # Persistent engineering memory, quirks & solutions
 ├── bec_12v_to_5v/                 # Core 12V-to-5V BEC KiCad project
 │   ├── bec_12v_to_5v.kicad_pro    # Project settings & net classes
